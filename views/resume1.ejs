@@ -90,9 +90,7 @@
         <h1 class="font-semibold uppercase tracking-wider my-6 text-gray-500">
           Experience
         </h1>
-        <h1 class="text-gray-600 font-semibold">
-          FullStack Developer (2018 - Present)
-        </h1>
+        <h1 class="text-gray-600 font-semibold"><%= name %></h1>
         <ul class="list-disc ml-5 text-gray-500">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
@@ -138,12 +136,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
     <script>
       window.onload = function () {
         const btn = document.getElementById("downloadBtn");
         btn.addEventListener("click", () => {
           const resume = this.document.getElementById("resume");
-          html2pdf().from(resume).save();
+
+          const options = {
+            filename: "resume.pdf",
+            image: { type: "jpeg", quality: 0.98 },
+            jsPDF: { format: "letter", orientation: "landscape" },
+          };
+          html2pdf().from(resume).set(options).save();
         });
       };
     </script>
