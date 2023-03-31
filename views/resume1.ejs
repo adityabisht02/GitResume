@@ -8,85 +8,78 @@
     <link rel="stylesheet" href="/output.css" />
   </head>
   <body>
-    <button id="downloadBtn">Download as PDF</button>
+    <button id="downloadBtn" class="bg-red-500">Download as PDF</button>
     <div class="flex items-center justify-center mt-5" id="resume">
-      <div class="bg-blue-900 w-1/8 p-10 h-auto">
-        <div class="flex items-center justify-center mb-10">
+      <div class="bg-red-900 w-1/8 p-10 h-auto">
+        <div class="flex items-center justify-center mb-10 flex-col">
           <img
-            src="<%= profilepic %>"
+            src="<%= avatar_url %>"
             alt=""
             class="rounded-full w-32 border-2 border-gray-300"
           />
+          <h1 class="text-white text-lg font-bold tracking-widest">
+            <%= name %>
+          </h1>
         </div>
-        <h1 class="text-gray-400 uppercase tracking-widest text-lg font-bold">
+
+        <h1 class="text-white uppercase tracking-widest text-lg font-bold">
           Contact
         </h1>
         <hr class="w-1/6 mb-5" />
-        <h1 class="text-gray-400 text-sm">loremipsum@gmail.com</h1>
-        <h1 class="text-gray-400 text-sm">+12 456 455 7885</h1>
-        <h1 class="text-gray-400 text-sm">Seoul, Korea</h1>
-        <h1 class="text-gray-400 text-sm">www.loremipsum.com</h1>
+        <h1 class="text-white text-sm">Location - <%= location %></h1>
+
+        <h1 class="text-white text-sm">Twitter - <%= twitter_username %></h1>
+
+        <h1 class="text-white text-sm">Github - <%= html_url %></h1>
+
+        <h1 class="text-white text-sm">Portfolio - <%= blog %></h1>
+
+        <h1 class="text-white text-sm">Company - <%= company %></h1>
+
+        <h1 class="text-white text-sm">
+          Public projects - <%= public_repos %>
+        </h1>
         <hr class="my-5" />
-        <h1
-          class="text-gray-400 mt-2 uppercase tracking-widest text-lg font-bold"
-        >
+        <h1 class="text-white mt-2 uppercase tracking-widest text-lg font-bold">
           EDUCATION
         </h1>
         <hr class="w-1/6 mb-5" />
-        <h1
-          class="text-gray-400 text-sm uppercase font-semibold tracking-wider"
-        >
+        <h1 class="text-white text-sm uppercase font-semibold tracking-wider">
           Master of Science
         </h1>
-        <h1 class="text-gray-500 text-sm">
+        <h1 class="text-white text-sm">
           <span class="italic">University Name</span>,
-          <span class="text-gray-400 font-semibold italic">New York</span> /
+          <span class="text-white font-semibold italic">New York</span> /
           2012-2013
         </h1>
         <br />
-        <h1
-          class="text-gray-400 text-sm uppercase font-semibold tracking-wider"
-        >
+        <h1 class="text-white text-sm uppercase font-semibold tracking-wider">
           Bachelor of Arts
         </h1>
-        <h1 class="text-gray-500 text-sm">
+        <h1 class="text-white text-sm">
           <span class="italic">College Name Here</span>,
-          <span class="text-gray-400 font-semibold italic">London</span> /
+          <span class="text-white font-semibold italic">London</span> /
           2011-2012
         </h1>
         <hr class="my-5" />
-        <h1
-          class="text-gray-400 mt-2 uppercase tracking-widest text-lg font-bold"
-        >
+        <h1 class="text-white mt-2 uppercase tracking-widest text-lg font-bold">
           SKILLS
         </h1>
         <hr class="w-1/6 mb-5" />
         <ul>
-          <li class="text-gray-500 text-sm list-disc ml-4">Adobe Photoshop</li>
-          <li class="text-gray-500 text-sm list-disc ml-4">
-            Adobe Illustrator
-          </li>
-          <li class="text-gray-500 text-sm list-disc ml-4">
-            Adobe After Effects
-          </li>
-          <li class="text-gray-500 text-sm list-disc ml-4">
+          <li class="text-white text-sm list-disc ml-4">Adobe Photoshop</li>
+          <li class="text-white text-sm list-disc ml-4">Adobe Illustrator</li>
+          <li class="text-white text-sm list-disc ml-4">Adobe After Effects</li>
+          <li class="text-white text-sm list-disc ml-4">
             Microsoft Power Point
           </li>
-          <li class="text-gray-500 text-sm list-disc ml-4">Microsoft Word</li>
-          <li class="text-gray-500 text-sm list-disc ml-4 mb-1">
-            Adobe InDesign
-          </li>
+          <li class="text-white text-sm list-disc ml-4">Microsoft Word</li>
+          <li class="text-white text-sm list-disc ml-4 mb-1">Adobe InDesign</li>
         </ul>
       </div>
 
       <div class="bg-white w-7/12 p-10 h-auto">
-        <h1 class="text-gray-500">
-          A resourceful individual with a proven track record in implementing
-          successful marketing strategies, boosting organic traffic, and
-          improving search rankings seeks a position of Marketing Associate at
-          ABC company to maximize brand awareness and revenue through integrated
-          marketing communications.
-        </h1>
+        <h1 class="text-gray-500"><%= bio %></h1>
         <h1 class="font-semibold uppercase tracking-wider my-6 text-gray-500">
           Experience
         </h1>
