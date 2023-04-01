@@ -47,6 +47,8 @@ const profile = {
   updated_at: "2023-03-31T20:49:26Z",
 };
 
+var githubprofile = {};
+
 function getProfile() {
   axios
     .get("https://api.github.com/users/adityabisht02/starred")
@@ -66,6 +68,30 @@ function getProfile() {
 app.get("/", function (req, res) {
   res.render("index", profile);
 });
+
+app.post("/", function (req, res) {
+  const username = req.body.username;
+  const url = "https://api.github.com/users/" + username;
+  // axios
+  //   .get(url)
+  //   .then(function (response) {
+  //     // handle success
+  //     githubprofile = response.data;
+  //     console.log(githubprofile);
+
+  //     res.render("resume1", githubprofile);
+  //   })
+  //   .catch(function (error) {
+  //     // handle error
+  //     console.log(error);
+  //   })
+  //   .finally(function () {
+  //     // always executed
+  //   });
+
+  res.render("resume1", profile);
+});
+
 app.get("/resume", function (req, res) {
   res.render("resume1", profile);
 });

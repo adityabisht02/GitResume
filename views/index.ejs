@@ -7,22 +7,54 @@
     <title>Document</title>
     <link rel="stylesheet" href="/output.css" />
   </head>
+  <style>
+    .invisiblecard {
+      display: none;
+    }
+  </style>
   <body>
     <div
-      class="relative flex flex-col justify-center overflow-hidden bg-gray-300 py-3 px-3 sm:py-12 h-screen"
+      class="relative flex flex-col justify-center bg-gray-800 p-5 sm:py-12 h-screen"
       id="card-one"
+    >
+      <div
+        class="relative flex flex-col justify-center overflow-hidden bg-white p-14 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:rounded-lg sm:px-10"
+      >
+        <div class="flex m-auto flex-row items-center justify-center">
+          <img src="/githubicon.png" class="font-4xl m-auto text-center" />
+          <h1 class="text-center font-bold text-4xl">GITResume</h1>
+        </div>
+
+        <p class="text-center text-xl">
+          Generate your resume or portfolio website directly from your github
+          profile !!
+        </p>
+        <div class="flex items-center justify-center mt-10">
+          <button
+            class="m-auto bg-gray-800 p-5 text-xl text-white font-bold"
+            id="cardOneBtn"
+          >
+            Proceed
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="relative flex flex-col justify-center overflow-hidden bg-gray-800 py-3 px-3 sm:py-12 h-screen invisiblecard"
+      id="card-two"
     >
       <div
         class="relative flex flex-col justify-center overflow-hidden bg-white px-3 pt-3 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:rounded-lg sm:px-10"
       >
         <div class="mx-auto">
           <div class="divide-y divide-gray-300/50">
-            <div class="space-y-6 py-8 text-base leading-7 text-gray-600">
-              <p class="text-center font-bold text-2xl">WHY NFT TICKETS?</p>
+            <div class="space-y-6 py-8 text-base leading-7">
+              <p class="text-center font-bold text-2xl">HOW TO USE</p>
               <ul class="space-y-4">
                 <li class="flex items-center">
                   <svg
-                    class="h-6 w-6 flex-none fill-red-300 stroke-red-bg-btn stroke-2"
+                    class="h-6 w-6 flex-none fill-gray-800 stroke-red-bg-btn stroke-2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
@@ -38,7 +70,7 @@
                 </li>
                 <li class="flex items-center">
                   <svg
-                    class="h-6 w-6 flex-none fill-red-300 stroke-red-bg-btn stroke-2"
+                    class="h-6 w-6 flex-none fill-gray-800 stroke-red-bg-btn stroke-2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
@@ -54,7 +86,7 @@
                 </li>
                 <li class="flex items-center">
                   <svg
-                    class="h-6 w-6 flex-none fill-red-300 stroke-red-bg-btn stroke-2"
+                    class="h-6 w-6 flex-none fill-gray-800 stroke-red-bg-btn stroke-2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
@@ -106,20 +138,63 @@
             </div>
           </div>
         </div>
-        <button class="m-auto bg-red-400 p-5 items-center">
-          Generate resume
+        <button
+          class="m-auto bg-gray-800 p-5 items-center text-white font-bold"
+          id="cardTwoBtn"
+        >
+          Proceed
         </button>
       </div>
     </div>
 
-    <div
-      class="relative flex flex-col justify-center overflow-hidden bg-gray-300 py-3 px-3 sm:py-12 h-screen"
-      id="class-two"
+    <form
+      method="post"
+      action="/"
+      class="relative flex flex-col justify-center bg-gray-800 p-5 sm:py-12 h-screen invisiblecard"
+      id="card-three"
     >
-      <h1 class="text-center">Enter your github username</h1>
-      https://github.com/<input type="text" class="p-5" />
+      <div
+        class="relative flex flex-col justify-center overflow-hidden bg-white p-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:rounded-lg sm:px-10"
+      >
+        <h1 class="text-center font-bold text-4xl">
+          Enter your github username
+        </h1>
+        <div class="flex items-center justify-center mt-10">
+          <p class="text-xl font-semibold">https://github.com/</p>
+          <input type="text" class="p-2 text-xl" name="username" />
+        </div>
 
-      <button class="m-auto bg-red-400 p-5">Generate resume</button>
-    </div>
+        <div class="flex items-center justify-center mt-10">
+          <button class="m-auto bg-gray-800 p-5 text-xl text-white font-bold">
+            Resume
+          </button>
+          <button class="m-auto bg-gray-800 p-5 text-xl text-white font-bold">
+            Website
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <script>
+      window.onload = function () {
+        const cardOne = document.querySelector("#card-one");
+        const cardTwo = document.querySelector("#card-two");
+        const cardThree = document.querySelector("#card-three");
+
+        const btn1 = document.querySelector("#cardOneBtn");
+        const btn2 = document.querySelector("#cardTwoBtn");
+        const btn3 = document.querySelector("#cardThreeBtn");
+
+        btn1.addEventListener("click", function () {
+          cardOne.classList.add("invisiblecard");
+          cardTwo.classList.remove("invisiblecard");
+          console.log(cardTwo.classList);
+        });
+        btn2.addEventListener("click", function () {
+          cardTwo.classList.add("invisiblecard");
+          cardThree.classList.remove("invisiblecard");
+        });
+      };
+    </script>
   </body>
 </html>
