@@ -8,11 +8,118 @@
     <link rel="stylesheet" href="/output.css" />
   </head>
   <body>
-    <h1 class="text-center">hello</h1>
-    <p class="text-center font-bold">jfefji</p>
-    <h1><%= name %></h1>
-    <img src="<%= profilepic %>" alt="" class="rounded w-100 h-100" />
-    <a href="<%= link %>"><%= link %></a>
-    <button class="m-auto bg-red-400">hfufwh</button>
+    <div
+      class="relative flex flex-col justify-center overflow-hidden bg-gray-300 py-3 px-3 sm:py-12 h-screen"
+      id="card-one"
+    >
+      <div
+        class="relative flex flex-col justify-center overflow-hidden bg-white px-3 pt-3 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:rounded-lg sm:px-10"
+      >
+        <div class="mx-auto">
+          <div class="divide-y divide-gray-300/50">
+            <div class="space-y-6 py-8 text-base leading-7 text-gray-600">
+              <p class="text-center font-bold text-2xl">WHY NFT TICKETS?</p>
+              <ul class="space-y-4">
+                <li class="flex items-center">
+                  <svg
+                    class="h-6 w-6 flex-none fill-red-300 stroke-red-bg-btn stroke-2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="11" />
+                    <path
+                      d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9"
+                      fill="none"
+                    />
+                  </svg>
+                  <p class="ml-4 text-xl">
+                    Prevents fake ticket frauds since tokens exist on chain.
+                  </p>
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="h-6 w-6 flex-none fill-red-300 stroke-red-bg-btn stroke-2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="11" />
+                    <path
+                      d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9"
+                      fill="none"
+                    />
+                  </svg>
+                  <p class="ml-4 text-xl">
+                    Act as great collectibles and have value.
+                  </p>
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="h-6 w-6 flex-none fill-red-300 stroke-red-bg-btn stroke-2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="11" />
+                    <path
+                      d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9"
+                      fill="none"
+                    />
+                  </svg>
+                  <p class="ml-4 text-xl">
+                    Prevents black marketing since tickets cannot be sold for
+                    higher price
+                  </p>
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="h-6 w-6 flex-none fill-red-300 stroke-red-bg-btn stroke-2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="11" />
+                    <path
+                      d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9"
+                      fill="none"
+                    />
+                  </svg>
+                  <p class="ml-4 text-xl">
+                    Has future benefits in case organisers wish to award NFT
+                    holders.
+                  </p>
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="h-6 w-6 flex-none fill-red-300 stroke-red-bg-btn stroke-2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="11" />
+                    <path
+                      d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9"
+                      fill="none"
+                    />
+                  </svg>
+                  <p class="ml-4 text-xl">
+                    Helps celebrities get closer to their audience.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button class="m-auto bg-red-400 p-5 items-center">
+          Generate resume
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="relative flex flex-col justify-center overflow-hidden bg-gray-300 py-3 px-3 sm:py-12 h-screen"
+      id="class-two"
+    >
+      <h1 class="text-center">Enter your github username</h1>
+      https://github.com/<input type="text" class="p-5" />
+
+      <button class="m-auto bg-red-400 p-5">Generate resume</button>
+    </div>
   </body>
 </html>
