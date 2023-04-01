@@ -8,64 +8,43 @@
     <link rel="stylesheet" href="/output.css" />
   </head>
   <body>
-    <button id="downloadBtn" class="bg-red-500">Download as PDF</button>
-    <div class="flex items-center justify-center mt-5" id="resume">
-      <div class="bg-red-900 w-1/8 p-10 h-auto">
+    <button id="downloadBtn" class="bg-red-500 m-auto p-3 mt-3">Download as PDF</button>
+    <div class="flex items-center justify-center mt-3 w-3/4 m-auto h-screen" id="resume">
+      <div class="bg-red-900 w-1/3 p-10 h-screen">
         <div class="flex items-center justify-center mb-10 flex-col">
           <img
-            src="<%= avatar_url %>"
+            src="<%= profile.avatar_url %>"
             alt=""
             class="rounded-full w-32 border-2 border-gray-300"
           />
+
           <h1 class="text-white text-lg font-bold tracking-widest">
-            <%= name %>
+            <%= profile.name %>
           </h1>
         </div>
-
+        <hr class="my-5" />
         <h1 class="text-white uppercase tracking-widest text-lg font-bold">
           Contact
         </h1>
-        <hr class="w-1/6 mb-5" />
-        <h1 class="text-white text-sm">Location - <%= location %></h1>
-
-        <h1 class="text-white text-sm">Twitter - <%= twitter_username %></h1>
-
-        <h1 class="text-white text-sm">Github - <%= html_url %></h1>
-
-        <h1 class="text-white text-sm">Portfolio - <%= blog %></h1>
-
-        <h1 class="text-white text-sm">Company - <%= company %></h1>
-
-        <h1 class="text-white text-sm">
-          Public projects - <%= public_repos %>
-        </h1>
+       
+        <h1 class="text-white text-sm flex"><p class="font-bold">Location : </p><%= profile.location %></h1>
+        <h1 class="text-white text-sm flex"><p class="font-bold">Twitter : </p><%= profile.twitter_username %></h1>
+        <h1 class="text-white text-sm flex"><p class="font-bold">Github :  </p><%= profile.html_url %></h1>
+        <h1 class="text-white text-sm flex"><p class="font-bold">Portfolio :  </p><%= profile.blog %></h1>
+        <h1 class="text-white text-sm flex"><p class="font-bold">Public Projects :  </p><%= profile.public_repos %></h1>
+   
         <hr class="my-5" />
         <h1 class="text-white mt-2 uppercase tracking-widest text-lg font-bold">
-          EDUCATION
+          BIO
         </h1>
-        <hr class="w-1/6 mb-5" />
-        <h1 class="text-white text-sm uppercase font-semibold tracking-wider">
-          Master of Science
-        </h1>
-        <h1 class="text-white text-sm">
-          <span class="italic">University Name</span>,
-          <span class="text-white font-semibold italic">New York</span> /
-          2012-2013
-        </h1>
-        <br />
-        <h1 class="text-white text-sm uppercase font-semibold tracking-wider">
-          Bachelor of Arts
-        </h1>
-        <h1 class="text-white text-sm">
-          <span class="italic">College Name Here</span>,
-          <span class="text-white font-semibold italic">London</span> /
-          2011-2012
-        </h1>
+        <h1 class="text-white text-sm flex"> <%= profile.bio %></h1> 
+
         <hr class="my-5" />
+
         <h1 class="text-white mt-2 uppercase tracking-widest text-lg font-bold">
           SKILLS
         </h1>
-        <hr class="w-1/6 mb-5" />
+        
         <ul>
           <li class="text-white text-sm list-disc ml-4">Adobe Photoshop</li>
           <li class="text-white text-sm list-disc ml-4">Adobe Illustrator</li>
@@ -79,13 +58,15 @@
       </div>
 
       <div class="bg-white w-7/12 p-10 h-auto">
-        <h1 class="text-black"><%= bio %></h1>
+        <h1 class="text-black"><%= profile.bio %></h1>
         <h1 class="font-semibold uppercase tracking-wider my-6">Experience</h1>
-        <h1 class="text-gray-600 font-semibold"><%= name %></h1>
+        
         <ul class="list-disc ml-5 text-black">
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <% for(var i=0; i<starred.length; i++) {%>
+
+            <li ><%= starred[i].name %></li>
+            
+            <% } %>
         </ul>
         <h1 class="text-gray-600 font-semibold mt-3">
           Sr Developer (2016 - 2-18)
