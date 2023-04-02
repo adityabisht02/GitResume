@@ -8,82 +8,91 @@
     <link rel="stylesheet" href="/output.css" />
   </head>
   <body>
-    <button id="downloadBtn" class="bg-red-500 m-auto p-3 mt-3 text-center">
-      Download as PDF
-    </button>
-    <div
-      class="flex items-center justify-center mt-3 w-4/5 m-auto h-fit"
-      id="resume"
-    >
-      <div class="bg-red-900 w-2/5 p-10 h-screen">
-        <div class="flex items-center justify-center mb-10 flex-col">
-          <img
-            src="<%= profile.avatar_url %>"
-            alt=""
-            class="rounded-full w-32 border-2 border-gray-300"
-          />
+    <div class="flex flex-col items-center justify-start">
+      <button
+        id="downloadBtn"
+        class="bg-gray-700 ml-500 p-3 mt-3 text-white font-semibold"
+      >
+        Download as PDF
+      </button>
+      <div
+        class="flex items-center justify-center mt-3 w-4/5 m-auto h-fit"
+        id="resume"
+      >
+        <div class="bg-gray-800 w-2/5 p-10 h-screen">
+          <div class="flex items-center justify-center mb-10 flex-col">
+            <img
+              src="<%= profile.avatar_url %>"
+              alt=""
+              class="rounded-full w-32 border-2 border-gray-300"
+            />
 
-          <h1 class="text-white text-lg font-bold tracking-widest">
-            <%= profile.name %>
+            <h1 class="text-white text-lg font-bold tracking-widest">
+              <%= profile.name %>
+            </h1>
+          </div>
+          <hr class="my-5" />
+          <h1 class="text-white uppercase tracking-widest text-lg font-bold">
+            Contact
           </h1>
+
+          <h1 class="text-white text-sm flex">
+            <p class="font-bold">Location :</p>
+            <%= profile.location %>
+          </h1>
+          <h1 class="text-white text-sm flex">
+            <p class="font-bold">Twitter :</p>
+            <%= profile.twitter_username %>
+          </h1>
+          <h1 class="text-white text-sm flex">
+            <p class="font-bold">Github :</p>
+            <%= profile.html_url %>
+          </h1>
+          <h1 class="text-white text-sm flex">
+            <p class="font-bold">Portfolio :</p>
+            <%= profile.blog %>
+          </h1>
+          <h1 class="text-white text-sm flex">
+            <p class="font-bold">Public Projects :</p>
+            <%= profile.public_repos %>
+          </h1>
+
+          <hr class="my-5" />
+          <h1
+            class="text-white mt-2 uppercase tracking-widest text-lg font-bold"
+          >
+            BIO
+          </h1>
+          <h1 class="text-white text-sm flex"><%= profile.bio %></h1>
+
+          <hr class="my-5" />
+
+          <h1
+            class="text-white mt-2 uppercase tracking-widest text-lg font-bold"
+          >
+            COMPANY
+          </h1>
+
+          <h1 class="text-white text-sm flex"><%= profile.company %></h1>
         </div>
-        <hr class="my-5" />
-        <h1 class="text-white uppercase tracking-widest text-lg font-bold">
-          Contact
-        </h1>
 
-        <h1 class="text-white text-sm flex">
-          <p class="font-bold">Location :</p>
-          <%= profile.location %>
-        </h1>
-        <h1 class="text-white text-sm flex">
-          <p class="font-bold">Twitter :</p>
-          <%= profile.twitter_username %>
-        </h1>
-        <h1 class="text-white text-sm flex">
-          <p class="font-bold">Github :</p>
-          <%= profile.html_url %>
-        </h1>
-        <h1 class="text-white text-sm flex">
-          <p class="font-bold">Portfolio :</p>
-          <%= profile.blog %>
-        </h1>
-        <h1 class="text-white text-sm flex">
-          <p class="font-bold">Public Projects :</p>
-          <%= profile.public_repos %>
-        </h1>
-
-        <hr class="my-5" />
-        <h1 class="text-white mt-2 uppercase tracking-widest text-lg font-bold">
-          BIO
-        </h1>
-        <h1 class="text-white text-sm flex"><%= profile.bio %></h1>
-
-        <hr class="my-5" />
-
-        <h1 class="text-white mt-2 uppercase tracking-widest text-lg font-bold">
-          COMPANY
-        </h1>
-
-        <h1 class="text-white text-sm flex"><%= profile.company %></h1>
-      </div>
-
-      <div class="bg-white w-7/12 p-10 h-auto">
-        <h1 class="font-bold uppercase tracking-wider my-6 text-xl">
-          Projects
-        </h1>
-
-        <ul class="list-disc ml-5 text-black">
-          <% for(var i=0; i<4; i++) {%>
-          <h1 class="text-gray-800 font-semibold mt-3">
-            <%= starred[i].name %>
+        <div class="bg-white w-7/12 p-10 h-auto">
+          <h1 class="font-bold uppercase tracking-wider my-6 text-xl">
+            Projects
           </h1>
-          <li><%= starred[i].html_url %></li>
-          <li><%= starred[i].description %></li>
-          <li><%= starred[i].language %></li>
 
-          <% } %>
-        </ul>
+          <ul class="list-disc ml-5 text-black">
+            <% for(var i=0; i<4; i++) {%>
+            <h1 class="text-gray-800 font-semibold mt-3">
+              <%= starred[i].name %>
+            </h1>
+            <li><%= starred[i].html_url %></li>
+            <li><%= starred[i].description %></li>
+            <li><%= starred[i].language %></li>
+
+            <% } %>
+          </ul>
+        </div>
       </div>
     </div>
 

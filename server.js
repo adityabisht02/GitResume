@@ -636,23 +636,10 @@ const profile = {
   updated_at: "2023-03-31T20:49:26Z",
 };
 
+//object to store user profile data from api
 var githubprofile = {};
-
-function getProfile() {
-  axios
-    .get("https://api.github.com/users/adityabisht02/starred")
-    .then(function (response) {
-      // handle success
-      console.log(response);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .finally(function () {
-      // always executed
-    });
-}
+//object to store starred repo data from api
+var githubstarred = {};
 
 app.get("/", function (req, res) {
   res.render("index", profile);
@@ -661,28 +648,29 @@ app.get("/", function (req, res) {
 app.post("/", function (req, res) {
   const username = req.body.username;
   const url = "https://api.github.com/users/" + username;
+  const repourl = "https://api.github.com/users/" + username + "/starred";
+
   // axios
   //   .get(url)
   //   .then(function (response) {
   //     // handle success
   //     githubprofile = response.data;
-  //     console.log(githubprofile);
-
-  //     res.render("resume1", githubprofile);
   //   })
-  //   .catch(function (error) {
-  //     // handle error
-  //     console.log(error);
-  //   })
-  //   .finally(function () {
-  //     // always executed
+  //   .then(function () {
+  //     axios.get(repourl).then(function (resp) {
+  //       githubstarred = resp.data;
+  //       res.render("resume1", {
+  //         profile: githubprofile,
+  //         starred: githubstarred,
+  //       });
+  //     });
   //   });
 
   res.render("resume1", { profile: profile, starred: starred });
 });
 
-app.get("/resume", function (req, res) {
-  res.render("resume2", { starred: starred });
+app.get("/portfolio", function (req, res) {
+  res.render("portfolio1", { profile: profile, starred: starred });
 });
 
 app.listen(3000, function () {
