@@ -104,14 +104,19 @@
     ></script>
 
     <script>
+      useCORS: true;
+
       window.onload = function () {
         const btn = document.getElementById("downloadBtn");
         btn.addEventListener("click", () => {
           const resume = this.document.getElementById("resume");
 
           const options = {
+            margin: 0,
             filename: "resume.pdf",
+            html2canvas: { scale: 2, useCORS: true },
             image: { type: "jpeg", quality: 0.98 },
+
             jsPDF: { format: "letter", orientation: "landscape" },
           };
           html2pdf().from(resume).set(options).save();
