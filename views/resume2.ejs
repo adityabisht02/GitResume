@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Now</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div >
+        <div class="button_area">
+            <button id="downloadBtn">Download</button>
+        </div>
+      
+       <div id="resume">
+        <div id="inner-nav"></div>
+        <div id="container">
+            <div id="profile">
+                <div id="image">
+                    <img id="profile-photo" src="<%= profile.avatar_url %>" alt="Profile-Image">
+                </div>
+                <p id="name"> <%= profile.name %></p>
+                <p id="bio">Bio<br><span id="bio-git"><%= profile.bio %></span></p>
+                <p id="bio">Location<br><span id="bio-git"><%= profile.location %></span></p>
+                <p id="bio">Twitter<br><span id="bio-git"><%= profile.twitter_username %></span></p>
+                <p id="bio">GitHub-ID<br><span id="bio-git"><%= profile.twitter_username %></span></p>
+                <p id="bio">Website<br><span id="bio-git"><%= profile.html_url %></span></p>
+                
+                <hr width="100%">
+            </div>
+            <div id="info-cards">
+                <div class="card">
+                    <p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Work Experience</p>
+                    <a href="#"><%= profile.company %></a>
+                </div>
+                <div class="card">
+                    <p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Projects</p>
+                    <ul>
+                        <% for(let i=0; i<4; i++) {%>
+                            <li><p class="tags"><%= starred[i].name %><br><span><%= starred[i].html_url %>| <span><%= starred[i].description %></span> | <span><%= starred[i].language %></span></span></p>
+                
+                            <% } %>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
+    
+  
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+
+  <script>
+    useCORS: true;
+
+    window.onload = function () {
+      const btn = document.getElementById("downloadBtn");
+      btn.addEventListener("click", () => {
+        const resume = this.document.getElementById("resume");
+
+        const options = {
+          margin: 0,
+          filename: "resume.pdf",
+          html2canvas: { scale: 2, useCORS: true },
+          image: { type: "jpeg", quality: 0.98 },
+
+          jsPDF: { format: "letter", orientation: "landscape" },
+        };
+        html2pdf().from(resume).set(options).save();
+      });
+    };
+  </script>
+</body>
+</html>
